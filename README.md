@@ -6,7 +6,7 @@
 
 <p align="center">
   <a href="https://github.com/amotivv/memory-box">
-    <img src="https://raw.githubusercontent.com/amotivv/memory-box/main/assets/memory-box-logo.png" alt="Memory Box" width="300" />
+    <img src="https://storage.googleapis.com/amotivv-public/memory-box-logo.png" alt="Memory Box" width="300" />
   </a>
 </p>
 
