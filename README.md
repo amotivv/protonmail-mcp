@@ -1,6 +1,24 @@
 # Protonmail MCP Server
 
-This MCP server provides email sending functionality using Protonmail's SMTP service. It allows Cline to send emails on your behalf using your Protonmail credentials.
+<p align="center">
+  This MCP server is provided by <a href="https://amotivv.com">amotivv, inc.</a>, the creators of <a href="https://memorybox.dev">Memory Box</a>.
+</p>
+
+<p align="center">
+  <a href="https://github.com/amotivv/memory-box">
+    <img src="https://raw.githubusercontent.com/amotivv/memory-box/main/assets/memory-box-logo.png" alt="Memory Box" width="300" />
+  </a>
+</p>
+
+This MCP server provides email sending functionality using Protonmail's SMTP service. It allows both Claude Desktop and Cline VSCode extension to send emails on your behalf using your Protonmail credentials.
+
+## Compatibility
+
+This MCP server is compatible with:
+- **Claude Desktop App**: The standalone desktop application for Claude
+- **Cline VSCode Extension**: The Claude extension for Visual Studio Code
+
+The same implementation works across both platforms since they both use the Model Context Protocol (MCP) standard.
 
 ## Features
 
@@ -11,7 +29,15 @@ This MCP server provides email sending functionality using Protonmail's SMTP ser
 
 ## Configuration
 
-The server requires the following environment variables to be set in the MCP settings file:
+The server requires the following environment variables to be set in the MCP settings files for both Claude Desktop and Cline:
+
+### Claude Desktop Configuration
+Located at: `/Users/your-username/Library/Application Support/Claude/claude_desktop_config.json`
+
+### Cline VSCode Extension Configuration
+Located at: `/Users/your-username/Library/Application Support/Code/User/globalStorage/saoudrizwan.claude-dev/settings/cline_mcp_settings.json`
+
+Both configuration files require the following environment variables:
 
 - `PROTONMAIL_USERNAME`: Your Protonmail email address
 - `PROTONMAIL_PASSWORD`: Your Protonmail SMTP password (not your regular login password)
@@ -60,10 +86,13 @@ Sends an email using your Protonmail SMTP account.
 
 If you encounter issues with the MCP server, check the following:
 
-1. Ensure your Protonmail SMTP credentials are correct
+1. Ensure your Protonmail SMTP credentials are correct in both configuration files
 2. Verify that the SMTP port is not blocked by your firewall
 3. Check if your Protonmail account has any sending restrictions
-4. Look for error messages in the Claude desktop app logs
+4. Look for error messages in the logs:
+   - Claude Desktop app logs
+   - Cline VSCode extension output panel
+5. Restart the Claude Desktop app or reload the VSCode window after configuration changes
 
 ## Development
 
@@ -77,8 +106,51 @@ npm run build
 
 To modify the server, edit the files in the `src` directory and rebuild the project.
 
+## Installation
+
+This MCP server can be installed in both Claude Desktop and Cline VSCode extension. Here's how to add it to your environment:
+
+### Manual Installation
+
+1. Clone this repository to your local machine:
+   ```bash
+   git clone https://github.com/your-username/protonmail-mcp.git
+   cd protonmail-mcp
+   ```
+
+2. Install dependencies and build the project:
+   ```bash
+   npm install
+   npm run build
+   ```
+
+3. Add the server configuration to your MCP settings files (see Configuration section above)
+
+### Using Cline to Install from GitHub
+
+Cline can automatically clone and build MCP servers from GitHub repositories. To use this feature:
+
+1. Provide Cline with the GitHub repository URL
+2. Let Cline clone and build the server
+3. Provide any necessary configuration information (like SMTP credentials)
+
+For detailed instructions on installing MCP servers from GitHub using Cline, see the [Cline MCP Server Installation Documentation](https://docs.cline.bot/mcp-server-from-github).
+
 ## Resources
 
 - [Protonmail SMTP Documentation](https://proton.me/support/smtp-submission) - Official guide for using Protonmail's SMTP service
 - [Nodemailer Documentation](https://nodemailer.com/) - The email sending library used by this MCP server
 - [Model Context Protocol Documentation](https://github.com/modelcontextprotocol/mcp) - Documentation for the MCP protocol
+- [Claude Desktop App](https://claude.ai/download) - Download the Claude Desktop application
+- [Cline VSCode Extension](https://marketplace.visualstudio.com/items?itemName=saoudrizwan.claude-dev) - Install the Cline extension for VSCode
+- [Cline MCP Documentation](https://docs.cline.bot/mcp-servers/mcp-quickstart) - Cline's documentation for MCP servers
+- [Installing MCP Servers from GitHub](https://docs.cline.bot/mcp-server-from-github) - Guide for installing MCP servers from GitHub repositories
+
+### Finding More MCP Servers
+
+You can find additional MCP servers in these repositories and directories:
+
+- [Official MCP Servers Repository](https://github.com/modelcontextprotocol/servers) - Collection of official MCP servers
+- [Awesome-MCP Servers Repository](https://github.com/punkpeye/awesome-mcp-servers) - Community-curated list of MCP servers
+- [mcpservers.org](https://mcpservers.org/) - Online directory of MCP servers
+- [mcp.so](https://mcp.so/) - Another directory for discovering MCP servers
