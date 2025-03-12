@@ -4,6 +4,8 @@
   This MCP server is provided by <a href="https://amotivv.com">amotivv, inc.</a>, the creators of <a href="https://memorybox.dev">Memory Box</a>.
 </p>
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 <p align="center">
   <a href="https://github.com/amotivv/memory-box">
     <img src="https://storage.googleapis.com/amotivv-public/memory-box-logo.png" alt="Memory Box" width="300" />
@@ -154,3 +156,7 @@ You can find additional MCP servers in these repositories and directories:
 - [Awesome-MCP Servers Repository](https://github.com/punkpeye/awesome-mcp-servers) - Community-curated list of MCP servers
 - [mcpservers.org](https://mcpservers.org/) - Online directory of MCP servers
 - [mcp.so](https://mcp.so/) - Another directory for discovering MCP servers
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
